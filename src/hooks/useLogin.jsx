@@ -39,6 +39,7 @@ export const useLoginForm = () => {
                 console.log('Login successful:', data);
                 localStorage.setItem('firstName', data.user.firstName);
                 localStorage.setItem('lastName', data.user.lastName);
+                localStorage.setItem('user', JSON.stringify(data.user));
                 navigate('/HomepageView');
             } catch (error) {
                 setErrorMessage('Login failed: ' + error.message);
